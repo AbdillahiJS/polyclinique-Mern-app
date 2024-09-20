@@ -18,13 +18,14 @@ app.use('/doctor',require('./View/doctors/index.js'))
 app.use('/users',require('./View/users/index.js'))
 
 if(process.env.NODE_ENV ==="production"){
-app.use(express.static(path.join(__dirname,'/frontend/dist')))
+app.use(express.static(path.join(__dirname,'../frontend/dist')))
 app.get('*',(req,res)=>{
   
-  res.sendFile(path.resolve(__dirname,"frontend","dist","index.html"))
+  res.sendFile(path.resolve("frontend","dist","index.html"))
 })
 
 }
+
 
 
 
@@ -39,7 +40,7 @@ app.get('*',(req,res)=>{
 
 
 
+    app.listen(process.env.PORT || 9800,()=>'listening server in port 8000')
 
 
 
-app.listen(process.env.PORT || 9800,()=>'listening server in port 8000')
