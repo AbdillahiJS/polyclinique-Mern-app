@@ -6,7 +6,7 @@ import axios from 'axios'
 import { getLocalStorage } from "@/util/localStorage"
 import DoctorCard from '../../../component/DoctorCard';
 import DorctorDetailCard from './dorctorDetailCard';
-// import useRatingDoctor from '../../../hooks/useRatingDoctor';
+
 
 
 const DetailPage = () => {

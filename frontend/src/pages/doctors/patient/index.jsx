@@ -25,8 +25,8 @@ const index = () => {
     }
   })
   
-  console.log('allPatient >',data)
-  // flex justify-around
+
+
 
   return (
     <>
@@ -39,12 +39,7 @@ const index = () => {
      icons={<BiCalendarEvent className='text-3xl text-blue-500 font-semibold'/>}
      />
 
-     {/* <SquareTab 
-     className={'mr-1'}
-     patient={data?.countUser} 
-     title={'Users'} 
-     icons={<FaUsers className='text-3xl text-blue-500 font-semibold'/>}
-     /> */}
+   
 
      <SquareTab 
      className={''}
@@ -68,7 +63,7 @@ const index = () => {
               </Tr>
         </Thead>
                 
-        {/* 'p-2 border-b-2 border-black border-solid lg:p-1 md:text-white md:text-lg'       */}
+      
             <Tbody className='bg-white '>
           {data?.allBooking?.map((item) => (
           

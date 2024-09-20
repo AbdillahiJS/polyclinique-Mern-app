@@ -29,7 +29,7 @@ import { useMutation, useQuery,useQueryClient } from '@tanstack/react-query';
 import axios from 'axios'
 import { getLocalStorage } from "@/util/localStorage"
 import SearchSpecialty from '../../../component/SearchSpecialty'
-// import useRatingDoctor from '../../../hooks/useRatingDoctor'
+
 
 
 
@@ -89,7 +89,6 @@ const SpecialtyPage = () => {
      
  { 
       data?.length<=3 && ( <div className="h-screen flex justify-center mt-[5vh]"> 
-      {/* <span className='mt-10 text-lg font-semibold'>No data</span>  */}
       </div> )
      }  
 

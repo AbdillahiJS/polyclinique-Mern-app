@@ -39,7 +39,7 @@ const {mutate} =useMutation({
     }
   },
   onSuccess:(data)=>{
-console.log('success data >',data);
+
 setUserEmailConfirmation(data?.userMsg)
 !!data?.userToken && setLocalStorageUser('userToken',data?.userToken)
 !!data?.userToken && navigate('/')

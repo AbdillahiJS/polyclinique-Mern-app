@@ -15,7 +15,7 @@ const doctorLoginSchema = yup.object().shape({
   doctorLoginPassword:yup.string().min(6,"length must not less than 6").required()
 })
 
-console.log(getLocalStorage('token'),!!getLocalStorage('token'));
+
 
 function DoctorLogin() {
   let navigate = useNavigate()
@@ -31,7 +31,7 @@ function DoctorLogin() {
          
         },
          onSuccess:(data)=>{
-        console.log('Successfully login > ',data);
+     
         setConfirmedAlert(data.msg)
         !!data?.Logintoken && setLocalStorage('token',data?.Logintoken)
         !!data?.Logintoken && navigate('/doctor/profile')

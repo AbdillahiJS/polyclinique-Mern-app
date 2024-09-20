@@ -2,10 +2,7 @@
 import {
     Dialog,
     DialogContent,
-    DialogDescription,
-    DialogClose,
     DialogHeader,
-    DialogTitle,
     DialogTrigger,
   } from "@/components/ui/dialog"
   import { useForm } from "react-hook-form"
@@ -56,10 +53,10 @@ const EditProfile = ({doctorName,doctorSpecialty,doctorBirthDay,doctorLocation,
         
       onSuccess:(data)=>{
         queryClient.invalidateQueries({ queryKey: ['profile'] })
-        console.log('profileUpdate >',data);
-
       } 
     })
+      
+
 
     const {
         register,
@@ -79,12 +76,10 @@ const EditProfile = ({doctorName,doctorSpecialty,doctorBirthDay,doctorLocation,
     formData.append('editProfileSex', data.editProfileSex);
     formData.append('editProfileDateNaissance', data.editProfileDateNaissance);
        
-            // console.log({...data,profileImg:data.profileImg[0]});
-            mutate(formData)
-        
-      }
+          mutate(formData)
+  }
 
-console.log(watch('profileImg'));
+
 
 
   return (

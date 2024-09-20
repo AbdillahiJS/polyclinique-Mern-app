@@ -3,8 +3,8 @@ import React from 'react'
 import {
     Card,
     CardContent,
- 
   } from "@/components/ui/card"
+ 
   import {
     Avatar,
     AvatarFallback,
@@ -17,8 +17,7 @@ import { FaMoneyBill1Wave } from "react-icons/fa6";
 import Rating from './Rating';
 import ScheduleUser from '@/pages/doctors/schedule/scheduleUser';
 import { Link } from 'react-router-dom';
-// import useFetchFeesHook from '../hooks/useFetchFeesHook';
-// import useSchedule from '../hooks/useScheduleHook';
+
 import {  useQuery,useQueryClient } from '@tanstack/react-query';
 import RatingDoctor from './doctorRating';
 
@@ -64,14 +63,14 @@ const DoctorCard = ({_id,doctorName,doctorSpecialty,doctorDescriptionSpecialized
             </Link>
              <span className="text-gray-400 font-semibold">{doctorSpecialty}</span>
           <div className=""> 
-            {/* <Rating/> */}
+         
             <RatingDoctor totalRating={totalRating}/>
             </div>
 
             </div>
 
             <div className=" h-full md:h-1/2 flex flex-col justify-around">
-            {/* lg:mt-0  w-full h-full lg:h-full ring-1 ring-black flex flex-col justify-around md:block */}
+          
               <div className="flex items-center ">
                 <FaStethoscope className='mr-4 text-blue-700 text-2xl border-b-2 border-b-red-500 pb-1'/>
                 <p className="font-semibold text-slate-500 text-md">{doctorDescriptionSpecialized}</p> 
@@ -91,7 +90,7 @@ const DoctorCard = ({_id,doctorName,doctorSpecialty,doctorDescriptionSpecialized
             </div>
 
           </div>
-          {/* ml-2 p-2 */}
+       
           <div className="hidden  md:w-[50%] h-[100%] md:flex ">
           <ScheduleUser id={_id}/>
           </div>

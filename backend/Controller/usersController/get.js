@@ -31,8 +31,7 @@ const getScheduleUsers=async(req,res)=>{
 
 }
 const getDetail=async(req,res)=>{
-    // 6681771e6cd321b45c25fb26
-    // .sort({ createdAt: -1 })
+    
     try {
         
         let detailOne= await Register.findOne({doctorName:req.params.doctorName})
@@ -82,7 +81,7 @@ const getUserLogin=async(req,res)=>{
 }
 
 const getReservertion=async(req,res)=>{
-        //  console.log(req.params);
+       
     try {
        let getAppointmentTime = await Schedule.findById(req.params.reservationId)
        let findDoctor=await Register.findOne({_id:getAppointmentTime.doctorRegisteredId}).select('doctorName profile doctorDescriptionSpecialized doctorLocation');
@@ -105,31 +104,31 @@ const getBookingDetail=async(req,res)=>{
 }
     
 
-const countRatingForDoctor=async(req,res)=>{
+// const countRatingForDoctor=async(req,res)=>{
    
     
-    try {
+//     try {
             
-        const CountUsersComments =  await Comment.find({belongedDoctorId:req.params.ratingId})
-        const CountComments =  await Comment.find({belongedDoctorId:req.params.ratingId}).countDocuments()
+//         const CountUsersComments =  await Comment.find({belongedDoctorId:req.params.ratingId})
+//         const CountComments =  await Comment.find({belongedDoctorId:req.params.ratingId}).countDocuments()
         
-        let sum =0
-         CountUsersComments.forEach(allRating=>{
-            sum=sum+parseInt(allRating.rating) 
-        })
+//         let sum =0
+//          CountUsersComments.forEach(allRating=>{
+//             sum=sum+parseInt(allRating.rating) 
+//         })
        
-        await Register.findOneAndUpdate({_id:req.params.ratingId},{
-            $set:{
-                totalRating:sum/parseInt(CountComments)
-            }
-        })
+//         await Register.findOneAndUpdate({_id:req.params.ratingId},{
+//             $set:{
+//                 totalRating:sum/parseInt(CountComments)
+//             }
+//         })
 
-             res.json(CountUsersComments)
+//              res.json(CountUsersComments)
              
-    } catch (error) {
-        res.json(error)
-    }
-}
+//     } catch (error) {
+//         res.json(error)
+//     }
+// }
     
 
 

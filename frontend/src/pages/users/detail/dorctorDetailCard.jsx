@@ -21,7 +21,7 @@ import RightBookingInfo from './rightBookingInfo'
 import { useNavigate, useParams } from 'react-router-dom'
 import useUserDetailName from '../../../hooks/useUserDetailName'
 import toast, { Toaster } from 'react-hot-toast';
-// import useRatingDoctor from '../../../hooks/useRatingDoctor'
+
 
 
 
@@ -31,9 +31,7 @@ const DorctorDetailsCard = () => {
   let name = doctorName?.split('-').map(name=>name).join(' ')
 
  const  data = useUserDetailName(name)
-//  let rating =useRatingDoctor(data?.detailOne._id)
-//  console.log(data?.detailOne)
- 
+
 
 
   

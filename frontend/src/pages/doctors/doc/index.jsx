@@ -28,7 +28,7 @@ const doctorRegistrationSchema = yup.object().shape({
 
 function Doctor() {
   const [data,setData]=useState(null)
-  // const [dataSuccessfull,setDataSuccessfull]=useState(null)
+  
   const [specialUrl, setSpecialUrl] = useState('')
 
 
@@ -48,7 +48,6 @@ function Doctor() {
     },
   
     onSuccess:(data)=>{
-console.log('Successfully Registered > ',data);
 setData(data)
 
 
@@ -57,7 +56,7 @@ setData(data)
 
 
 const submit =(data)=>{
-  console.log(data);
+
   mutate(data)
   reset()
 }
@@ -97,7 +96,7 @@ setValue('doctorSpecialty',value)
 }
   </SelectContent>
 </Select> 
-  {/* {/* <input type="text" {...register('doctorSpecialty')} className="bg-slate-100 ring-1 ring-slate-300  p-3 rounded" /> */}
+ 
   {errors?.doctorSpecialty && <span className="text-red-500  p-1">{errors?.doctorSpecialty?.message}</span>} 
   </div>
 

@@ -31,13 +31,13 @@ const index = () => {
      Your Profile Information is not Complet so your Schedule and Your profile it won't appear In The Users Interface.? Please complet it Now
 </div>
 }
-{/* flex flex-col items-center */}
+
     <div className="md:flex flex-col items-center  lg:mt-2 mx-2 mt-2 ">
     <Tabs defaultValue="profile" className="md:w-[98%] lg:w-[60%] ">
   <TabsList className='ring-1 ring-black flex justify-start p-2 '>
     <TabsTrigger value="profile" className='text-lg font-semibold '>Profile</TabsTrigger>
     <TabsTrigger value="fees" className='text-lg font-semibold '>Fees</TabsTrigger>
-    {/* <TabsTrigger value="info" className='text-lg font-semibold '>Info</TabsTrigger> */}
+  
   </TabsList>
   <TabsContent value="profile" className='w-[100%]'>
    <ProfileDescription/>

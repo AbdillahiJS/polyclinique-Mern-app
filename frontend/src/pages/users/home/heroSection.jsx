@@ -93,7 +93,7 @@ setSpecialUrl(value)
                     hover:text-white md:ml-2 mt-3
                       text-white font-bold tracking-wider 
                       text-xl"
-                      // onClick={()=>console.log('try: ',specialUrl)}
+               
                       > 
                       <Link to={`${specialUrl}`}>
                       Recherche
