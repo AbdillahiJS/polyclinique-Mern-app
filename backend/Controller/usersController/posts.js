@@ -110,15 +110,15 @@ const userRegisterPost=async(req,res)=>{
                   postComment.save() 
 
                  let findDoctor = await Register.findOne({_id:postComment.belongedDoctorId})
-                  // console.log('findDoctor >',findDoctor)
+                 
                   const CountUsersComments =  await Comment.find({belongedDoctorId:findDoctor._id})
-                  console.log('CountUsersComments >',CountUsersComments,CountUsersComments.length)
+                  
                   
                 let count =  CountUsersComments.reduce((acc,curr)=>{
-                        console.log('acc ',acc,'curr ',curr.rating,' acc+curr >',acc+parseInt(curr.rating))
+                      
                      return acc+parseInt(curr.rating)
                   },0)
-                  console.log('count >',count)
+                 
                   
                   await Register.findOneAndUpdate({_id:postComment.belongedDoctorId},{
                     $set:{
@@ -134,7 +134,7 @@ const userRegisterPost=async(req,res)=>{
      
 
       } catch (error) {
-        console.log(error)
+        
         res.status(400).send('commentServer error')
       }
     }
@@ -143,8 +143,7 @@ const userRegisterPost=async(req,res)=>{
     const bookingPost=async(req,res)=>{
       try {
     
-          //  console.log('Booking info >',req.body);
-         
+        
 
          let bookingPost =new Booking({
              patientName:req.body.nameInfo,
@@ -169,7 +168,7 @@ const userRegisterPost=async(req,res)=>{
     const appointmentPost=async(req,res)=>{
       try {
     
-           console.log('appointmentPost info >',req.params.appointmentId);
+         
 
            await transporter.sendMail({
             from:'Polyclinique <bs141.19109906.1@gmail.com>',  
@@ -184,12 +183,11 @@ const userRegisterPost=async(req,res)=>{
           }
          })
           
-       console.log('email sent');                   
-
+       
            res.send('Notification email was sent to the Doctor')
 
       } catch (error) {
-console.log('emailSending >',error)
+
         res.send(error)
 
       }

@@ -114,7 +114,6 @@ const getAllPatient=async(req,res)=>{
         let countBooking= await Booking.find({isBookingDone:true}).count()
          let countComment =await Comment.find({belongedDoctorId:req.doctor.doctorLoginId}).countDocuments()
          let countUser =await User.find().count()
-        // console.log(countBooking)
         
         res.json({allBooking,countBooking,countComment,countUser})
 

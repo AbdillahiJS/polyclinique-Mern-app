@@ -83,11 +83,11 @@ const ProfileDescription = () => {
         <p className="font-semibold text-md text-slate-600 mb-1">{data?.doctorLocation}</p>
         <div className="flex">
           <p className="font-semibold text-md text-slate-600 mr-1">Age : {data?.doctorBirthDay?parseInt(dateNow)-parseInt(data?.doctorBirthDay):'?'}
-          {/* <span className="ml-1 mr-1">{data?.doctorBirthday?'':'?'}</span>| */}
+       
           </p>
 
           <p className="font-semibold text-md text-slate-600 ml-1 mr-1">Gender : {data?.doctorSexe?data.doctorSexe :'?'}
-          {/* <span className="ml-1 mr-1">?</span>| */}
+         
           </p>
 
           <p className="font-semibold text-m text-slate-600 mr-1 ml-1">Status :

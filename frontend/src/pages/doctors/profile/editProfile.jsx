@@ -90,7 +90,7 @@ const EditProfile = ({doctorName,doctorSpecialty,doctorBirthDay,doctorLocation,
     </DialogTrigger>
   <DialogContent>
     <DialogHeader >
-      {/* <DialogTitle className="flex justify-center ">Edit your Profile</DialogTitle> */}
+      
     </DialogHeader>
     <div className="w-full bg-white">
   
@@ -105,13 +105,13 @@ const EditProfile = ({doctorName,doctorSpecialty,doctorBirthDay,doctorLocation,
      </div>
       <input type="file" 
       {...register('profileImg')} 
-      // name='profileImg'
+     
       accept='image/*'  
       onChange={(e)=>{
        if (e.target.files[0]) {
          console.log(e.target.files[0])
          setPreview(URL.createObjectURL(e.target.files[0]))
-        //  setValue('profileImg',e.target.files[0])
+        
          console.log(e.target.files[0]);
        }
      }}

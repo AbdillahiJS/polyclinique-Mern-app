@@ -84,8 +84,7 @@ try {
 const loginPost=async(req,res)=>{
   try {
     let doctorConfirmed = await Register.findOne({doctorEmail:req.body.doctorLoginEmail})
-    console.log('doctorConfirmed.isConfirmed',doctorConfirmed)
-
+    
     if(!doctorConfirmed.isConfirmed) return res.json({msg:'Confirmed your email Adress' , Logintoken:''})
  
       let value = await loginSchema.validateAsync(req.body)
@@ -133,7 +132,7 @@ const schedulePost=async(req,res)=>{
    
   } catch (error) {
 
-   console.log(error);
+ 
     res.send(error)
   }
 
