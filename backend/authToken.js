@@ -9,7 +9,7 @@ if (!token) return res.status(401).send('Access Denied');
 
 try {
 
-    const verified = jwt.verify(token, 'mysecretlogin');
+    const verified = jwt.verify(token, 'mysecret');
     
     req.doctor = verified;
     next();

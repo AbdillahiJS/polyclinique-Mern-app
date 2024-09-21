@@ -1,4 +1,4 @@
-require('dotenv').config();
+
 const Joi = require('joi');
 const nodemailer =require('nodemailer');
 const jwt =require('jsonwebtoken')
@@ -95,7 +95,7 @@ const loginPost=async(req,res)=>{
       
       if(!doctor) return res.status(400).send(`User Not Found`)
     
-      const Logintoken = jwt.sign({ doctorLoginId:doctor._id }, process.env.SECRETKEYLOGIN);
+      const Logintoken = jwt.sign({ doctorLoginId:doctor._id },'mysecret');
   
       res.status(200).json({doctor,Logintoken})
       

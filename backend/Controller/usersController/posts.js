@@ -69,7 +69,7 @@ const userRegisterPost=async(req,res)=>{
         
         let user = await User.findOne({email:req.body.email})
         if(!user.email) return res.status(400).json({userMsg:`User Not Found`})
-        const userToken = jwt.sign({ userId:user._id }, 'mysecretlogin');
+        const userToken = jwt.sign({ userId:user._id },'mysecretlogin');
     
         res.status(200).json({user,userToken})
         
