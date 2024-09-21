@@ -51,7 +51,6 @@ const SpecialtyPage = () => {
       })
       return  specialtyList.data
     },
-    // staleTime: 10
    
   })
 

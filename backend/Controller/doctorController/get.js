@@ -67,10 +67,10 @@ const getProfile =async(req,res)=>{
     } catch (error) {
         res.send('doctorProfileError')
        
-        
     }
-
+        
 }
+
 
 const getScheduleDoctor=async(req,res)=>{
     try {

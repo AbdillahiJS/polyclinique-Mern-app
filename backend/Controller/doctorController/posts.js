@@ -66,7 +66,7 @@ try {
     
     let user = await Register.findOne({doctorEmail})
     
-    const token = jwt.sign({ registerId:user._id }, process.env.SECRETKEY);
+    const token = jwt.sign({ registerId:user._id }, 'confirmationDoctorToken');
    
     await sendConfirmationEmail(doctorEmail, token);
   
@@ -95,7 +95,7 @@ const loginPost=async(req,res)=>{
       
       if(!doctor) return res.status(400).send(`User Not Found`)
     
-      const Logintoken = jwt.sign({ doctorLoginId:doctor._id },'mysecret');
+      const Logintoken = jwt.sign({ doctorLoginId:doctor._id },'myDoctorSecret');
   
       res.status(200).json({doctor,Logintoken})
       

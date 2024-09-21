@@ -13,7 +13,7 @@ const getSpecialtyList=async(req,res)=>{
         res.send(specialtyList)
 
     } catch (error) {
-        res.send('get-specialty-Error',error)
+        res.send('get-specialty-Error')
     }
 
 }
@@ -103,34 +103,6 @@ const getBookingDetail=async(req,res)=>{
     }
 }
     
-
-// const countRatingForDoctor=async(req,res)=>{
-   
-    
-//     try {
-            
-//         const CountUsersComments =  await Comment.find({belongedDoctorId:req.params.ratingId})
-//         const CountComments =  await Comment.find({belongedDoctorId:req.params.ratingId}).countDocuments()
-        
-//         let sum =0
-//          CountUsersComments.forEach(allRating=>{
-//             sum=sum+parseInt(allRating.rating) 
-//         })
-       
-//         await Register.findOneAndUpdate({_id:req.params.ratingId},{
-//             $set:{
-//                 totalRating:sum/parseInt(CountComments)
-//             }
-//         })
-
-//              res.json(CountUsersComments)
-             
-//     } catch (error) {
-//         res.json(error)
-//     }
-// }
-    
-
 
 
 module.exports={getSpecialtyList,getScheduleUsers,getDetail,getUserConfirmation,getUserLogin,getReservertion,getBookingDetail}

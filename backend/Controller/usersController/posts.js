@@ -46,7 +46,7 @@ const userRegisterPost=async(req,res)=>{
          const {email} =userRegistration
         let user = await User.findOne({email})
         if(!user.email) return res.send('User is already Registered')
-        const token = jwt.sign({ userId:user._id }, process.env.SECRETKEY);
+        const token = jwt.sign({ userId:user._id }, 'confirmationUserToken');
        
         await sendConfirmationEmail(email, token);
       
@@ -69,7 +69,7 @@ const userRegisterPost=async(req,res)=>{
         
         let user = await User.findOne({email:req.body.email})
         if(!user.email) return res.status(400).json({userMsg:`User Not Found`})
-        const userToken = jwt.sign({ userId:user._id },'mysecretlogin');
+        const userToken = jwt.sign({ userId:user._id },'myUserSecret');
     
         res.status(200).json({user,userToken})
         

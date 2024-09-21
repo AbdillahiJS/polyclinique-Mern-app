@@ -29,7 +29,7 @@ const storage = new CloudinaryStorage({
 });
 
 const upload = multer({ storage: storage });
-// console.log(upload);
+
 doctor.post('/register',registerPost)
 doctor.post('/login',loginPost)
 doctor.post('/schedule',authToken,schedulePost)

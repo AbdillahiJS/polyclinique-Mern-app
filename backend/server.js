@@ -5,14 +5,13 @@ let mongoose =require('mongoose')
 let cors =require('cors')
 let path=require('path')
 
-// "build": "npm install  && npm install --prefix frontend && npm build --prefix frontend",
+
 
 app.use(express.json())
 app.use(express.urlencoded({extended:false}))
 
-app.use(cors())
+app.use(cors({ origin: '*' }))
 
-// console.log(path.join(__dirname,'../frontend'))
 
 app.use('/doctor',require('./View/doctors/index.js'))
 app.use('/users',require('./View/users/index.js'))
