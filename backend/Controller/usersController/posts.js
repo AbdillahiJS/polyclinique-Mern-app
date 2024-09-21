@@ -1,3 +1,4 @@
+require('dotenv').config();
 const jwt =require('jsonwebtoken')
 const User =require('../../Model/userRegister')
 const nodemailer =require('nodemailer')

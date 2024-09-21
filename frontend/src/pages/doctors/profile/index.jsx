@@ -1,6 +1,4 @@
-import React from 'react'
-import path from 'path'
-// console.log('what','@/profileDescription');
+import React from 'react' 
 import ProfileDescription from '../../doctors/profile/profileDescription'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import Fees from './fees'
@@ -13,13 +11,13 @@ const index = () => {
   const {data} =useQuery({
     queryKey:['profile'],
     queryFn:async()=>{
-      // toast(<span>Custom and <b>bold</b></span>);
+   
           let doctorProfileRes = await axios.get('http://localhost:8000/doctor/profile',{
             headers:{
               "Authorization":getLocalStorage('token')
             }
           })
-          return doctorProfileRes.data
+          return doctorProfileRes?.data
         }
   
     })
